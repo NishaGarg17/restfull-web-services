@@ -3,7 +3,7 @@ package com.in28minutes.rest.webservices.restfullwebservices.entity;
 import java.util.Date;
 
 public class User {
-	private int id;
+	private Integer id;
 	
 	private String name;
 	
@@ -14,11 +14,11 @@ public class User {
 		return "User [id=" + id + ", name=" + name + ", birthDate=" + birthDate + "]";
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
