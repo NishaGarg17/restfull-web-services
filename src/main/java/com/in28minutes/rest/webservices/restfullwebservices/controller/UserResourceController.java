@@ -38,7 +38,7 @@ public class UserResourceController {
 	public User findOne(@PathVariable int id) {
 		User user = userDaoService.findOne(id);
 		if(user == null) {
-			throw new UserNotFoundException("id- " + id);
+			throw new UserNotFoundException("Not Able to find user of id-" + id);
 		}
 		return user;
 	}
@@ -55,7 +55,7 @@ public class UserResourceController {
 		User user = userDaoService.deleteById(id);
 		
 		if(user == null)
-			throw new UserNotFoundException("id- " + id);
+			throw new UserNotFoundException("Not Able to find user of id-" + id);
 	}
 }
 	
