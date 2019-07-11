@@ -2,16 +2,17 @@ package com.in28minutes.rest.webservices.restfullwebservices.entity;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
-
-import org.springframework.lang.NonNull;
 
 public class User {
 	private Integer id;
 	
-	@NonNull
-	@Size(min = 1, message = "Must provide a non-empty value for a Name")
+	@NotNull( message = "Name cant' be null")
+	//@Size(min = 1, message = "Must provide a non-empty value for a Name")
+	@NotBlank(message = "Must provide a non-empty value for a Name")
 	private String name;
 	
 	@Past
