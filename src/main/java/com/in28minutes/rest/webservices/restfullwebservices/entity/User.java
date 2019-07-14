@@ -5,16 +5,21 @@ import java.util.Date;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(description="All details about the user")
 public class User {
 	private Integer id;
 	
+	@ApiModelProperty(notes="Name cant' be null and should be a non empty value")
 	@NotNull( message = "Name cant' be null")
 	//@Size(min = 1, message = "Must provide a non-empty value for a Name")
 	@NotBlank(message = "Must provide a non-empty value for a Name")
 	private String name;
 	
+	@ApiModelProperty(notes="birth date must be in past")
 	@Past
 	private Date birthDate;
 
