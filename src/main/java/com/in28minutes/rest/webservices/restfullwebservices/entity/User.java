@@ -2,6 +2,10 @@ package com.in28minutes.rest.webservices.restfullwebservices.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -10,7 +14,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description="All details about the user")
+@Entity
 public class User {
+	
+	@Id
+	@GeneratedValue
 	private Integer id;
 	
 	@ApiModelProperty(notes="Name cant' be null and should be a non empty value")
@@ -19,7 +27,7 @@ public class User {
 	@NotBlank(message = "Must provide a non-empty value for a Name")
 	private String name;
 	
-	@ApiModelProperty(notes="birth date must be in past")
+	@ApiModelProperty(notes="birth date must be in past")	
 	@Past
 	private Date birthDate;
 
